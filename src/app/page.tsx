@@ -11,14 +11,14 @@ import { AlertTriangle } from "lucide-react"
 type MealType = "breakfast" | "lunch" | "tea"
 
 const DOSE_TABLE = {
-  breakfast: [16, 18, 20, 22, 24],
-  lunch: [10, 12, 14, 16, 18],
-  tea: [8, 10, 12, 14, 16],
+  breakfast: [14, 16, 18, 20, 22, 24],
+  lunch: [8, 10, 12, 14, 16, 18],
+  tea: [6, 8, 10, 12, 14, 16],
 }
 
-const GLUCOSE_RANGES = ["Under 12", "12 to 14.9", "15 to 17.9", "18 to 20.9", "21 and above"]
+const GLUCOSE_RANGES = ["Under 9", "9 to 11.9", "12 to 14.9", "15 to 17.9", "18 to 20.9", "21 and above"]
 
-const GLUCOSE_THRESHOLDS = [12, 15, 18, 21]
+const GLUCOSE_THRESHOLDS = [9, 12, 15, 18, 21]
 const HYPO_THRESHOLD = 4.2
 const KETOACIDOSIS_THRESHOLD = 22
 
@@ -26,7 +26,7 @@ function getDoseIndex(glucose: number): number {
   for (let i = 0; i < GLUCOSE_THRESHOLDS.length; i++) {
     if (glucose < GLUCOSE_THRESHOLDS[i]) return i
   }
-  return 4 // For 21+
+  return 5 // For 21+
 }
 
 export default function InsulinCalculator() {
@@ -72,7 +72,7 @@ export default function InsulinCalculator() {
                   <TableHead className="w-[120px]" rowSpan={2}>
                     Meal Time
                   </TableHead>
-                  <TableHead className="text-center font-bold bg-muted" colSpan={5}>
+                  <TableHead className="text-center font-bold bg-muted" colSpan={6}>
                     Glucose Level (mmol/L)
                   </TableHead>
                 </TableRow>
@@ -105,7 +105,7 @@ export default function InsulinCalculator() {
                   <TableCell className="font-medium">Tea Time</TableCell>
                   {DOSE_TABLE.tea.map((dose, i) => (
                     <TableCell key={i} className="text-center font-bold text-lg">
-                      {dose.toString().padStart(2, "0")}
+                      {dose}
                     </TableCell>
                   ))}
                 </TableRow>
