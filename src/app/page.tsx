@@ -209,7 +209,7 @@ export default function InsulinCalculator() {
                 {mealType === "breakfast" && (
                   <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
                     <p className="text-sm font-medium text-green-800 mb-2">Long Acting (Green Pen) - Give First</p>
-                    <p className="text-3xl font-bold text-green-700">28 units</p>
+                    <p className="text-3xl font-bold text-green-700">30 units</p>
                   </div>
                 )}
 
