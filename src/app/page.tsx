@@ -112,7 +112,7 @@ export default function InsulinCalculator() {
               </TableBody>
             </Table>
             <p className="text-sm text-muted-foreground mt-4">
-              All values shown are units of fast-acting insulin (Orange Pen). At breakfast, also give 28 units of
+              All values shown are units of fast-acting insulin (Orange Pen). At breakfast, also give 30 units of
               long-acting insulin (Green Pen).
             </p>
           </CardContent>
